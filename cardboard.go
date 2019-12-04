@@ -37,4 +37,24 @@ func main() {
 		fmt.Println("The guy has a fingerprint")
 	}
 
+	var pets [5]int
+
+	fmt.Println(pets)
+
+	for i := 0; i < len(pets); i++ {
+		pets[i] = i
+	}
+
+	fmt.Println(pets)
+
+	var tower [2][2]int
+
+	for i := 0; i < 2; i++ {
+		for j := 0; j < 2; j++ {
+			tower[i][j] = i + j
+		}
+	}
+
+	fmt.Println(tower)
+
 }
