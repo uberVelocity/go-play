@@ -91,4 +91,40 @@ func main() {
 	// The length of inner slices varies, unlike with multi-dimensional arrays
 	fmt.Println("2d: ", twoD)
 
+	// Maps / Dictionaries
+	coffeePrices := make(map[string]float32)
+
+	coffeePrices["starbucks"] = 5.4
+	coffeePrices["mc"] = 2.1
+	coffeePrices["uni"] = 1.4
+
+	fmt.Println("Coffee prices: ", coffeePrices)
+
+	var price float32 = 0.0
+	ripOff := false
+	if coffeePrices["mc"] > 1.4 {
+		ripOff = true
+		price = coffeePrices["mc"]
+
+	} else {
+		ripOff = false
+	}
+
+	if ripOff == true {
+		fmt.Println("They're ripping us of Harry! ", price, " for this!?")
+		delete(coffeePrices, "mc")
+		fmt.Println("Much better: ", coffeePrices)
+		_, mcPresent := coffeePrices["mc"]
+		fmt.Println("Mc present? ", mcPresent)
+		starbucks, starbucksPresent := coffeePrices["starbucks"]
+		fmt.Println("Starbucks present? ", starbucksPresent, " Value: ", starbucks)
+	}
+
+	oneLiner := map[string]int{"one": 1, "liner": 42}
+	fmt.Println("One liner: ", oneLiner)
+
+	oneLiner["two"] = 2
+
+	fmt.Println(oneLiner)
+
 }
