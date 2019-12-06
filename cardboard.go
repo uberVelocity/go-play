@@ -73,12 +73,12 @@ func main() {
 	slice = append(slice, 3)
 	fmt.Println("After append: ", slice)
 
-	copied_slice := make([]int, len(slice))
-	fmt.Println("Copied slice after make: ", copied_slice)
-	copy(copied_slice, slice)
-	fmt.Println("Copied slice after copy: ", copied_slice)
+	copiedSlice := make([]int, len(slice))
+	fmt.Println("Copied slice after make: ", copiedSlice)
+	copy(copiedSlice, slice)
+	fmt.Println("Copied slice after copy: ", copiedSlice)
 
-	fmt.Println("Last three elements: ", copied_slice[2:6])
+	fmt.Println("Last three elements: ", copiedSlice[2:6])
 
 	twoD := make([][]int, 3)
 	for i := 0; i < 3; i++ {
