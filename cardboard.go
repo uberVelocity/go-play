@@ -57,4 +57,38 @@ func main() {
 
 	fmt.Println(tower)
 
+	// Slices are dynamical arrays
+	slice := make([]int, 3)
+	slice[0] = 0
+	slice[1] = 1
+	slice[2] = 2
+	fmt.Println("Basic slice: ", slice)
+
+	// Making an existing slice overwrites its elements with 0
+	slice = make([]int, 5)
+	slice[3] = 3
+	slice[4] = 4
+	fmt.Println("New make, before append: ", slice)
+
+	slice = append(slice, 3)
+	fmt.Println("After append: ", slice)
+
+	copied_slice := make([]int, len(slice))
+	fmt.Println("Copied slice after make: ", copied_slice)
+	copy(copied_slice, slice)
+	fmt.Println("Copied slice after copy: ", copied_slice)
+
+	fmt.Println("Last three elements: ", copied_slice[2:6])
+
+	twoD := make([][]int, 3)
+	for i := 0; i < 3; i++ {
+		innerLen := i + 1
+		twoD[i] = make([]int, innerLen)
+		for j := 0; j < innerLen; j++ {
+			twoD[i][j] = i + j
+		}
+	}
+	// The length of inner slices varies, unlike with multi-dimensional arrays
+	fmt.Println("2d: ", twoD)
+
 }
